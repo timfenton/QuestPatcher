@@ -10,6 +10,9 @@ using QuestPatcher.Core;
 using QuestPatcher.Core.Models;
 using QuestPatcher.Core.Patching;
 using Serilog;
+using JetBrains.Annotations;
+using System.Collections.Generic;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace QuestPatcher.ViewModels
 {
@@ -119,6 +122,86 @@ namespace QuestPatcher.ViewModels
             }   finally
             {
                 Locker.FinishOperation();
+            }
+        }
+
+        public async void RemoveOldModDirectories()
+        {
+            try
+            {
+                List<string> modPaths = new List<string>
+                {
+                    "/sdcard/Android/data/com.beatgames.beatsaber/files/libs",
+                    "/sdcard/Android/data/com.beatgames.beatsaber/files/mods"
+                };
+
+                await _debugBridge.Chmod(modPaths, "777");
+
+                foreach(string modPath in modPaths)
+                {
+                    Log.Information(modPath);
+                    await _debugBridge.RemoveDirectory(modPath);
+                }
+
+                Log.Information("Done!");
+
+                DialogBuilder builder = new()
+                {
+                    Title = "Finished removing old mod folders!",
+                    Text = $"The following mod folders were removed: \n{modPaths[0]}\n{modPaths[1]}",
+                    HideCancelButton = true
+                };
+                await builder.OpenDialogue();
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to remove the old mod directories: {ex}");
+                DialogBuilder builder = new()
+                {
+                    Title = "Failed to remove the old mod directories",
+                    Text = "Removing the old mod directories failed due to an unhandled error",
+                    HideCancelButton = true
+                };
+                builder.WithException(ex);
+
+                await builder.OpenDialogue(_mainWindow);
+            }
+        }
+
+        public async void FixModPermissions()
+        {
+            try
+            {
+                List<string> modPaths = new List<string>
+                {
+                    "/sdcard/Android/data/com.beatgames.beatsaber/files/libs/*",
+                    "/sdcard/Android/data/com.beatgames.beatsaber/files/mods/*"
+                };
+
+                List<string> libsExist = await _debugBridge.ListDirectoryFiles(modPaths[0].Replace("/*",""));
+                List<string> modsExist = await _debugBridge.ListDirectoryFiles(modPaths[1].Replace("/*", ""));
+
+                if(libsExist.Count <= 0)
+                    throw new Exception("Library files are not copied, ensure you have installed core mods successfully");
+
+                if(modsExist.Count <= 0)
+                    throw new Exception("Mod files are not copied, ensure you have installed core mods successfully");
+
+                await _debugBridge.Chmod(modPaths, "+r");
+                Log.Information("Done!");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to fix the mod directory permissions: {ex}");
+                DialogBuilder builder = new()
+                {
+                    Title = "Failed to fix the mod directory permissions",
+                    Text = "Running the fix permissions failed due to an unhandled error",
+                    HideCancelButton = true
+                };
+                builder.WithException(ex);
+
+                await builder.OpenDialogue(_mainWindow);
             }
         }
 

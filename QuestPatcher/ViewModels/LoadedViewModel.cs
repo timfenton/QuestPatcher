@@ -33,11 +33,11 @@ namespace QuestPatcher.ViewModels
             {
                 DateTime now = DateTime.Now;
                 bool isAprilFools = now.Month == 4 && now.Day == 1;
-                return isAprilFools ? "QuestCorrupter" : "QuestPatcher";
+                return isAprilFools ? "QuestCorrupter" : "Quest3Patcher";
             }
         }
 
-        public string WelcomeText => $"Welcome to {AppName} 2";
+        public string WelcomeText => $"Welcome to {AppName}";
 
         public Config Config { get; }
         public ApkInfo AppInfo

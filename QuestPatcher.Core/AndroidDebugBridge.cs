@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using Serilog;
+using Serilog.Core;
 
 namespace QuestPatcher.Core
 {
@@ -156,11 +157,16 @@ namespace QuestPatcher.Core
         /// <param name="commands">The commands to execute</param>
         public async Task RunShellCommands(List<string> commands)
         {
+            
             if(commands.Count == 0) { return; } // Return blank output if no commands to avoid errors
 
             var currentCommand = new StringBuilder();
             for(int i = 0; i < commands.Count; i++)
             {
+                // Get rid of the surrounding ' since it breaks the chmod command in some cases.
+                if(commands[i].Contains("chmod"))
+                    commands[i] = commands[i].Replace("'","");
+
                 currentCommand.Append(commands[i]); // Add the next command
                 // If the current batch command + the next command will be greater than our command length limit (or we're at the last command), we stop the current batch command and add the result to the list
                 if ((commands.Count - i >= 2 && currentCommand.Length + commands[i + 1].Length + 4 >= CommandLengthLimit) || i == commands.Count - 1)

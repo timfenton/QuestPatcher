@@ -40,6 +40,14 @@
           <Button Command="{Binding QuickFix}" IsEnabled="{Binding Locker.IsFree}">Quick Fix</Button>
           <TextBlock VerticalAlignment="Center" FontSize="12">Clears cached QuestPatcher data - try this if something isn't working.</TextBlock>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <Button Command="{Binding RemoveOldModDirectories}" IsEnabled="{Binding Locker.IsFree}">Remove Old BS Mod Directories</Button>
+          <TextBlock VerticalAlignment="Center" FontSize="12">Remove old BS mod directories (built for Quest 3) </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <Button Command="{Binding FixModPermissions}" IsEnabled="{Binding Locker.IsFree}">Fix Mod Permissions</Button>
+          <TextBlock VerticalAlignment="Center" FontSize="12">Fixes mod permission on Quest 3.</TextBlock>
+        </StackPanel>
       </StackPanel>
       <StackPanel  Margin="0 20 0 0" Spacing="10">
         <StackPanel Orientation="Horizontal" Spacing="20">
