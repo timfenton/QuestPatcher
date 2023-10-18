@@ -3,7 +3,7 @@ Just a few quick changes to QuestPatcher as a *temporary* fix for Quest 3 BeatSa
 This fork serves as a temporary solution to mod beatsaber on Quest 3, once BMBF is updated to work on Quest 3 firmware it is *highly recommended* to remod all the things using the latest BMBF
 
 - Step 0: Uninstall Beat saber, lets start fresh.
-- Step 1: [Enable developer mode](https://bsmg.wiki/quest-modding.html )https://bsmg.wiki/quest-modding-bmbf.html#downgrading-beat-saber
+- Step 1: [Enable developer mode](https://bsmg.wiki/quest-modding.html )
 - Step 2: Sideload the downgraded 1.28 beat saber APK according to [these instructions](https://bsmg.wiki/quest-modding-bmbf.html#downgrading-beat-saber)
 - Step 2: Download QuestPatcher from the [releases section](https://github.com/timfenton/QuestPatcher/releases/tag/0.1) of *this* repo
 - Step 3: Open QuestPatcher on your PC
