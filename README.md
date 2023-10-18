@@ -5,15 +5,15 @@ This fork serves as a temporary solution to mod beatsaber on Quest 3, once BMBF 
 - Step 0: Uninstall Beat saber, lets start fresh.
 - Step 1: [Enable developer mode](https://bsmg.wiki/quest-modding.html )
 - Step 2: Sideload the downgraded 1.28 beat saber APK according to [these instructions](https://bsmg.wiki/quest-modding-bmbf.html#downgrading-beat-saber)
-- Step 2: Download QuestPatcher from the [releases section](https://github.com/timfenton/QuestPatcher/releases/tag/0.1) of *this* repo
-- Step 3: Open QuestPatcher on your PC
-- Step 4: Select com.beatgames.beatapp if its not already selected
-- Step 5: Click "PATCH APP"
-- Step 6: Go to tools > Remove old BS Mod Directories
-- Step 7: Open beatsaber on quest, accept everything and go to solo mode, skip tutorial, exit beatsaber
-- Step 8: Download [Custom Types Latest .QMOD file](https://github.com/sc2ad/Il2CppQuestTypePatching/releases)
-- Step 9: Download [Core Mods Latest .QMOD file](https://oculusdb.rui2015.me/api/coremodsdownload/1.28.0_4124311467.qmod)
-- Step 10: Install Custom Types.QMOD then install Core Mods Latest QMOD file via the custom mods section of quest patcher
+- Step 3: Download QuestPatcher from the [releases section](https://github.com/timfenton/QuestPatcher/releases/tag/0.1) of *this* repo
+- Step 4: Open QuestPatcher on your PC
+- Step 5: Select com.beatgames.beatapp if its not already selected
+- Step 6: Click "PATCH APP"
+- Step 7: Go to tools > Remove old BS Mod Directories
+- Step 8: Open beatsaber on quest, accept everything and go to solo mode, skip tutorial, exit beatsaber
+- Step 9: Download [Custom Types Latest .QMOD file](https://github.com/sc2ad/Il2CppQuestTypePatching/releases)
+- Step 10: Download [Core Mods Latest .QMOD file](https://oculusdb.rui2015.me/api/coremodsdownload/1.28.0_4124311467.qmod)
+- Step 11: Install Custom Types.QMOD then install Core Mods Latest QMOD file via the custom mods section of quest patcher
 
 Load Beat saber up and enjoy. 
 
