@@ -11,7 +11,7 @@ This fork serves as a temporary solution to mod beatsaber on Quest 3, once BMBF 
 - Step 6: Click "PATCH APP"
 - Step 7: Go to tools > Remove old BS Mod Directories
 - Step 8: Open beatsaber on quest, accept everything and go to solo mode, skip tutorial, exit beatsaber
-- Step 9: Download [Custom Types Latest .QMOD file](https://github.com/sc2ad/Il2CppQuestTypePatching/releases)
+- Step 9: Download [Custom Types 0.15.24 .QMOD file](https://github.com/sc2ad/Il2CppQuestTypePatching/releases/tag/v0.15.24)
 - Step 10: Download [Core Mods Latest .QMOD file](https://oculusdb.rui2015.me/api/coremodsdownload/1.28.0_4124311467.qmod)
 - Step 11: Install Custom Types.QMOD then install Core Mods Latest QMOD file via the custom mods section of quest patcher
 
