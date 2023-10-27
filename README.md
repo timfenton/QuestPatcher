@@ -5,7 +5,7 @@ This fork serves as a temporary solution to mod beatsaber on Quest 3, once BMBF 
 - Step 0: Uninstall Beat saber, lets start fresh.
 - Step 1: [Enable developer mode](https://bsmg.wiki/quest-modding.html )
 - Step 2: Sideload the downgraded 1.28 beat saber APK according to [these instructions](https://bsmg.wiki/quest-modding-bmbf.html#downgrading-beat-saber)
-- Step 3: Download QuestPatcher from the [releases section](https://github.com/timfenton/QuestPatcher/releases/tag/0.1) of *this* repo
+- Step 3: Download QuestPatcher from the [releases section](https://github.com/timfenton/QuestPatcher/releases) of *this* repo
 - Step 4: Open QuestPatcher on your PC
 - Step 5: Select com.beatgames.beatapp if its not already selected
 - Step 6: Click "PATCH APP"
